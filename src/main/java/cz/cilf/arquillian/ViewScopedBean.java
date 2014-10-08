@@ -1,7 +1,6 @@
-package cz.cilf.javaeeprimefaces;
+package cz.cilf.arquillian;
 
 import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
 import javax.faces.view.ViewScoped;
 import javax.inject.Named;
 import java.io.Serializable;

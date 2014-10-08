@@ -6,15 +6,15 @@
 
 <h:head>
     <title>
-        java-ee-7-primefaces-5
+        arquillian-java-ee-7-primefaces-5
     </title>
 </h:head>
 
 <h:body>
     <h:form>
-        <h1>java-ee-7-primefaces-5</h1>
+        <h1>arquillian-java-ee-7-primefaces-5</h1>
         <h2>Value: #{viewScopedBean.value}</h2>
-        <p:commandButton action="#{viewScopedBean.increaseValue}" value="increase value" update="@form"/>
+        <p:commandButton action="#{viewScopedBean.increaseValue()}" value="increase value" update="@form"/>
     </h:form>
 </h:body>
 </html>
