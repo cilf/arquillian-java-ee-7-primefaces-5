@@ -70,7 +70,18 @@
         </dependencies>
     </dependencyManagement>
 
+    <properties>
+        <!-- PhantomJS will be our default browser if no profile is specified-->
+        <browser>phantomjs</browser>
+    </properties>
+
     <profiles>
+        <profile>
+            <id>firefox</id>
+            <properties>
+                <browser>firefox</browser>
+            </properties>
+        </profile>
         <profile>
             <id>wildfly81-remote</id>
             <dependencies>
@@ -110,6 +121,12 @@
             </dependencies>
 
             <build>
+                <testResources>
+                    <testResource>
+                        <directory>src/test/resources</directory>
+                        <filtering>true</filtering>
+                    </testResource>
+                </testResources>
                 <plugins>
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>

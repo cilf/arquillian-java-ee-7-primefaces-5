@@ -2,8 +2,6 @@
 
 This repository shows a minimal setup code needed to use arquillian functional testing.
 
-I'm using firefox because phantomjs is giving me [this exception](#unable-to-retrieve-drone-instance-within-60-seconds-w-phantomjs).
-
 I followed these:
 
 1. [Arquillian Guides - Getting Started](http://arquillian.org/guides/getting_started/)
@@ -27,90 +25,6 @@ org.openqa.selenium.firefox.NotConnectedException: Unable to connect to host 127
 ```
 
 **Solution:** check selenium's [changelog](http://selenium.googlecode.com/git/java/CHANGELOG) and download appropriate firefox version from [here](http://ftp.mozilla.org/pub/mozilla.org/firefox/releases/).
-
-### Unable to retrieve Drone Instance within 60 seconds w/ phantomjs
-
-The [question](https://developer.jboss.org/thread/248242) is posted in jboss forum but no answer yet.
-
-```
-java.lang.RuntimeException: Unable to retrieve Drone Instance within 60 seconds
-	at org.jboss.arquillian.drone.impl.DroneInstanceCreator.createDroneInstance(DroneInstanceCreator.java:89)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at org.jboss.arquillian.core.impl.ObserverImpl.invoke(ObserverImpl.java:94)
-	at org.jboss.arquillian.core.impl.EventContextImpl.invokeObservers(EventContextImpl.java:99)
-	at org.jboss.arquillian.core.impl.EventContextImpl.proceed(EventContextImpl.java:81)
-	at org.jboss.arquillian.core.impl.ManagerImpl.fire(ManagerImpl.java:145)
-	at org.jboss.arquillian.core.impl.ManagerImpl.fire(ManagerImpl.java:116)
-	at org.jboss.arquillian.core.impl.EventImpl.fire(EventImpl.java:67)
-	at org.jboss.arquillian.drone.impl.DroneTestEnricher.getDroneInstance(DroneTestEnricher.java:114)
-	at org.jboss.arquillian.drone.impl.DroneTestEnricher.enrich(DroneTestEnricher.java:75)
-	at org.jboss.arquillian.test.impl.TestInstanceEnricher.enrich(TestInstanceEnricher.java:52)
-	at org.jboss.arquillian.container.test.impl.ClientTestInstanceEnricher.enrich(ClientTestInstanceEnricher.java:51)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at org.jboss.arquillian.core.impl.ObserverImpl.invoke(ObserverImpl.java:94)
-	at org.jboss.arquillian.core.impl.EventContextImpl.invokeObservers(EventContextImpl.java:99)
-	at org.jboss.arquillian.core.impl.EventContextImpl.proceed(EventContextImpl.java:81)
-	at org.jboss.arquillian.container.test.impl.client.ContainerEventController.createContext(ContainerEventController.java:142)
-	at org.jboss.arquillian.container.test.impl.client.ContainerEventController.createBeforeContext(ContainerEventController.java:124)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at org.jboss.arquillian.core.impl.ObserverImpl.invoke(ObserverImpl.java:94)
-	at org.jboss.arquillian.core.impl.EventContextImpl.proceed(EventContextImpl.java:88)
-	at org.jboss.arquillian.test.impl.TestContextHandler.createTestContext(TestContextHandler.java:102)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at org.jboss.arquillian.core.impl.ObserverImpl.invoke(ObserverImpl.java:94)
-	at org.jboss.arquillian.core.impl.EventContextImpl.proceed(EventContextImpl.java:88)
-	at org.jboss.arquillian.test.impl.TestContextHandler.createSuiteContext(TestContextHandler.java:65)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at org.jboss.arquillian.core.impl.ObserverImpl.invoke(ObserverImpl.java:94)
-	at org.jboss.arquillian.core.impl.EventContextImpl.proceed(EventContextImpl.java:88)
-	at org.jboss.arquillian.test.impl.TestContextHandler.createClassContext(TestContextHandler.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at org.jboss.arquillian.core.impl.ObserverImpl.invoke(ObserverImpl.java:94)
-	at org.jboss.arquillian.core.impl.EventContextImpl.proceed(EventContextImpl.java:88)
-	at org.jboss.arquillian.core.impl.ManagerImpl.fire(ManagerImpl.java:145)
-	at org.jboss.arquillian.core.impl.ManagerImpl.fire(ManagerImpl.java:116)
-	at org.jboss.arquillian.test.impl.EventTestRunnerAdaptor.before(EventTestRunnerAdaptor.java:95)
-	at org.jboss.arquillian.junit.Arquillian$5.evaluate(Arquillian.java:258)
-	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:77)
-	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:56)
-	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
-	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
-	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
-	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
-	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
-	at org.jboss.arquillian.junit.Arquillian$2.evaluate(Arquillian.java:193)
-	at org.jboss.arquillian.junit.Arquillian.multiExecute(Arquillian.java:345)
-	at org.jboss.arquillian.junit.Arquillian.access$200(Arquillian.java:49)
-	at org.jboss.arquillian.junit.Arquillian$3.evaluate(Arquillian.java:207)
-	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
-	at org.jboss.arquillian.junit.Arquillian.run(Arquillian.java:155)
-	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
-	at com.intellij.junit4.JUnit4IdeaTestRunner.startRunnerWithArgs(JUnit4IdeaTestRunner.java:74)
-	at com.intellij.rt.execution.junit.JUnitStarter.prepareStreamsAndStart(JUnitStarter.java:211)
-	at com.intellij.rt.execution.junit.JUnitStarter.main(JUnitStarter.java:67)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
-	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)
-Caused by: java.util.concurrent.TimeoutException
-	at java.util.concurrent.FutureTask.get(FutureTask.java:201)
-	at org.jboss.arquillian.drone.impl.DroneInstanceCreator.createDroneInstance(DroneInstanceCreator.java:75)
-	... 77 more
-```
-
-**Solution:** use firefox instead
 
 ### java.lang.RuntimeException: Could not create new instance of class org.jboss.arquillian.graphene.enricher.SeleniumResourceProvider$BrowserConnectionProvider
 
