@@ -187,16 +187,7 @@ java.lang.IllegalStateException: Unexpected callable present in Drone Context, s
 	at com.intellij.rt.execution.application.AppMain.main(AppMain.java:134)
 ```
 
-**Solution:** you're missing following [dependency](http://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-common) in your pom.xml
-
-```
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-common</artifactId>
-    <version>2.0b1</version>
-    <scope>test</scope>
-</dependency>
-```
+**Solution:** Use latest version of `graphene-webdriver` ([maven repo](http://mvnrepository.com/artifact/org.jboss.arquillian.graphene/graphene-webdriver))
 
 ### PrimeFaces <p:commandButton/> button cannot be clicked on
 
@@ -316,13 +307,4 @@ Caused by: java.lang.ClassNotFoundException: org.openqa.selenium.android.Android
 	... 109 more
 ```
 
-**Solution:** You're missing this [dependency](http://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-android-driver) in your pom.xml
-
-```
-<dependency>
-    <groupId>org.seleniumhq.selenium</groupId>
-    <artifactId>selenium-android-driver</artifactId>
-    <version>2.39.0</version>
-    <scope>test</scope>
-</dependency>
-```
+**Solution:** **Solution:** Use latest version of `graphene-webdriver` ([maven repo](http://mvnrepository.com/artifact/org.jboss.arquillian.graphene/graphene-webdriver))
